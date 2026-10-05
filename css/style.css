@@ -1,0 +1,61 @@
+:root{
+  --accent:#ee4d2d;
+  --accent-dark:#d73211;
+  --bg:#f4f5f7;
+  --card:#ffffff;
+  --text:#1f2430;
+  --muted:#7a8394;
+  --line:#e5e8ee;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.5}
+.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .mark{font-size:26px}
+.brand h1{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.brand .tag{font-size:12px;color:var(--muted)}
+.phase{font-size:12px;font-weight:600;background:#fff3ef;color:var(--accent-dark);border:1px solid #ffd9cd;padding:5px 12px;border-radius:999px;white-space:nowrap}
+main{max-width:980px;margin:0 auto;padding:16px 16px 48px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 8px;text-align:center}
+.kpi-n{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em}
+.kpi-l{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.tabs{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;padding-bottom:2px}
+.tabs button{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600;white-space:nowrap;cursor:pointer}
+.tabs button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pane{display:none}
+.pane.on{display:block}
+.pane-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.pane-head h2{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.muted{color:var(--muted);font-size:13px;margin-top:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:15px;font-weight:700}
+.card .meta{font-size:13px;color:var(--muted)}
+.card .row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pill{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:#eef0f4;color:#5b6472}
+.pill.dipilih,.pill.dibuat{background:#e8f4ff;color:#0b6bcb}
+.pill.produksi{background:#fff7e0;color:#a06800}
+.pill.tayang,.pill.riset{background:#e7f8ec;color:#157a3c}
+.price{font-weight:800;font-size:16px}
+.btn{border:none;border-radius:10px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:active{background:var(--accent-dark)}
+.btn.ghost{background:#eef0f4;color:var(--text)}
+.btn.small{padding:6px 12px;font-size:13px}
+.btn:active{transform:scale(.97)}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px}
+label{font-size:13px;font-weight:600;display:flex;flex-direction:column;gap:5px}
+input,select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fbfcfe;width:100%}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:var(--accent)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-act{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
+.empty{grid-column:1/-1;background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);padding:32px 20px;text-align:center;color:var(--muted);font-size:14px}
+.empty b{display:block;font-size:15px;color:var(--text);margin-bottom:4px}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:32px}
+@media(max-width:560px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .pane-head{flex-direction:column}
+  .row2{grid-template-columns:1fr}
+}

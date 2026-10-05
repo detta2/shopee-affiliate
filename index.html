@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shopee Affiliate — Dashboard</title>
+<link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="mark">🛒</span>
+    <div>
+      <h1>Shopee Affiliate</h1>
+      <span class="tag">Pakaian anak · riset & produksi</span>
+    </div>
+  </div>
+  <span class="phase" id="phase-pill">Fase: Riset</span>
+</header>
+
+<main>
+  <section class="kpis">
+    <div class="kpi"><span class="kpi-n" id="k-riset">0</span><span class="kpi-l">Produk riset</span></div>
+    <div class="kpi"><span class="kpi-n" id="k-pilih">0</span><span class="kpi-l">Produk dipilih</span></div>
+    <div class="kpi"><span class="kpi-n" id="k-video">0</span><span class="kpi-l">Video dibuat</span></div>
+    <div class="kpi"><span class="kpi-n" id="k-tayang">0</span><span class="kpi-l">Video tayang</span></div>
+  </section>
+
+  <nav class="tabs" id="tabs">
+    <button data-tab="riset" class="on">🔍 Riset Produk</button>
+    <button data-tab="produk">📦 Produkku</button>
+    <button data-tab="video">🎬 Video</button>
+  </nav>
+
+  <section class="pane on" id="pane-riset">
+    <div class="pane-head">
+      <div>
+        <h2>Hasil riset pasar</h2>
+        <p class="muted" id="riset-updated">Riset berjalan… data masuk otomatis tiap hari.</p>
+      </div>
+      <button class="btn ghost" id="btn-riset-refresh">↻ Muat ulang</button>
+    </div>
+    <div id="riset-list" class="cards"></div>
+  </section>
+
+  <section class="pane" id="pane-produk">
+    <div class="pane-head">
+      <div>
+        <h2>Produk pilihanku</h2>
+        <p class="muted">Tambahkan produk yang mau dipromosikan + link affiliate dari akunmu.</p>
+      </div>
+      <button class="btn primary" id="btn-produk-add">＋ Tambah produk</button>
+    </div>
+    <form id="produk-form" class="form-card" hidden>
+      <label>Nama produk<input id="pf-nama" required placeholder="cth. Setelan anak laki-laki 1-5 th"></label>
+      <div class="row2">
+        <label>Harga (Rp)<input id="pf-harga" inputmode="numeric" placeholder="75000"></label>
+        <label>Komisi (%)<input id="pf-komisi" inputmode="decimal" placeholder="5"></label>
+      </div>
+      <label>Nama toko<input id="pf-toko" placeholder="cth. KidsWear Official"></label>
+      <label>Link affiliate<input id="pf-link" inputmode="url" placeholder="https://shope.ee/…"></label>
+      <label>Status
+        <select id="pf-status">
+          <option value="dipilih">Dipilih</option>
+          <option value="produksi">Produksi video</option>
+          <option value="tayang">Tayang</option>
+        </select>
+      </label>
+      <div class="form-act">
+        <button type="button" class="btn ghost" id="pf-batal">Batal</button>
+        <button type="submit" class="btn primary">Simpan</button>
+      </div>
+    </form>
+    <div id="produk-list" class="cards"></div>
+  </section>
+
+  <section class="pane" id="pane-video">
+    <div class="pane-head">
+      <div>
+        <h2>Video promo</h2>
+        <p class="muted">Catat video yang dibuat per produk biar nggak dobel.</p>
+      </div>
+      <button class="btn primary" id="btn-video-add">＋ Catat video</button>
+    </div>
+    <form id="video-form" class="form-card" hidden>
+      <label>Untuk produk
+        <select id="vf-produk"></select>
+      </label>
+      <label>Judul video<input id="vf-judul" required placeholder="cth. Racun Shopee: setelan anak 50 ribuan!"></label>
+      <div class="row2">
+        <label>Status
+          <select id="vf-status">
+            <option value="rencana">Rencana</option>
+            <option value="dibuat">Dibuat</option>
+            <option value="tayang">Tayang</option>
+          </select>
+        </label>
+        <label>Link video<input id="vf-link" inputmode="url" placeholder="https://…"></label>
+      </div>
+      <div class="form-act">
+        <button type="button" class="btn ghost" id="vf-batal">Batal</button>
+        <button type="submit" class="btn primary">Simpan</button>
+      </div>
+    </form>
+    <div id="video-list" class="cards"></div>
+  </section>
+
+  <footer>Data tersimpan di browser HP kamu · 100% client-side</footer>
+</main>
+
+<script src="js/app.js?v=1"></script>
+</body>
+</html>
